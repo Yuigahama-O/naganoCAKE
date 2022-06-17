@@ -2,48 +2,35 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :customers
   namespace :admin do
-    get 'jenres/index'
-    get 'jenres/edit'
+    resources :jenres, only: [:index, :edit, :update, :create]
+
+    resources :items, only: [:new, :index, :show, :edit, :create, :update]
+
+    resources :orders, only: [:index, :show, :update]
+
+    resources :order_details, only: [:update]
+
+    resources :customers, only: [:index, :show, :edit, :update]
   end
-  namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
-  end
-  namespace :admin do
-    get 'orders/index'
-    get 'orders/show'
-  end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
+
+
   namespace :public do
-    get 'cart_items/index'
-  end
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
-  end
-  namespace :public do
-    get 'orders/new'
-    get 'orders/index'
-    get 'orders/show'
+    resources :cart_items, only: [:index, :create, :destroy]
+    delete 'cart_items/destroy_all'
+
+    resources :items, only: [:index, :show]
+
+    resources :orders, only: [:new, :index, :show, :create]
+    post 'orders/comfirm'
     get 'orders/complete'
-  end
-  namespace :public do
-    get 'deliveries/index'
-    get 'deliveries/edit'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
+
+    resources :deliveries, only: [:index, :edit, :update, :create, :destroy]
+
+    resources :customers, only: [:show, :edit, :update]
     get 'customers/confirm'
-  end
-  namespace :public do
-    get 'homes/top'
+    patch 'customers/withdraw'
+
+    root to: 'homes#top'
     get 'homes/about'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
