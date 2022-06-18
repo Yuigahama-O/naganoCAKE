@@ -5,15 +5,15 @@
 <div class = "container">
     <div class = "row">
         <% @items.each do |item| %>
-            <div class = "col-md-4">
-                 <div class="card">
+            <div class = "col">
+                  <div class="style-scope ytd-rich-grid-row">
                     <%= link_to admin_item_path(item.id) do %>
-                        <%= image_tag item.get_item_image(100, 100) %>
-                        <div class="card-body text-center">
+                        <%= image_tag item.get_item_image(150, 150), class:"style-scope yt-img-shadow" %>
+                        <div class="style-scope ytd-rich-grid-media">
                             <%= item.name %>
                         </div>
-                        <div class="card-body text-center">
-                            <%= item.price %>
+                        <div class="style-scope ytd-rich-grid-media">
+                            <%= item.price %>円（税抜き）
                         </div>
                     <% end %>  
                 </div>
