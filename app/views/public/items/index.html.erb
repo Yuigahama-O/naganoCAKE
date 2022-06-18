@@ -2,17 +2,19 @@
 <div class = "container">
     <div class = "row">
         <% @items.each do |item| %>
-            <div class = "col-md-4">
-                 <div class="card">
-                    <%= link_to public_item_path(item.id) do %>
-                        <%= image_tag item.get_item_image(100, 100) %>
-                        <div class="card-body text-center">
-                            <%= item.name %>
-                        </div>
-                        <div class="card-body text-center">
-                            <%= item.price %>
-                        </div>
-                    <% end %>  
+            <div class = "col">
+                <div class="style-scope ytd-rich-grid-row">
+                    <div class="a-section a-spacing-base">
+                        <%= link_to public_item_path(item.id) do %>
+                            <%= image_tag item.get_item_image(150, 150), class:"s-image" %>
+                            <div class="a-size-base-plus a-color-base a-text-normal">
+                                <%= item.name %>
+                            </div>
+                            <div class="a-price-whole">
+                                <%= item.price %>円（税抜き）
+                            </div>
+                        <% end %>  
+                    </div>
                 </div>
             </div>
         <% end %>
