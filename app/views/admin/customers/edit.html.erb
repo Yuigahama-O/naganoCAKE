@@ -1,2 +1,48 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+    <h2>会員詳細</h2>
+      <div class="field">
+          <span>会員ID</span>
+          <span><%= @customer.id %></span>
+      </div>
+      
+      <%= form_with model:@customer,url:admin_customer_path, local:true do |f| %>
+      <div class="form-group">
+      <%= f.label :"氏名" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+      </div>
+       <div class="form-group">
+      <%= f.label :"フリガナ" %>
+      <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+      <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+      </div>
+      
+      <div class="form-group">
+      <%= f.label :"郵便番号" %>
+      <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :"電話番号" %>
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :"メールアドレス" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+       <div class="form-group">
+      <%= f.label :"会員ステータス" %>
+      <span>有効</span><%= f.radio_button :is_deleted, :false %>
+      <span>退会</span><%= f.radio_button :is_deleted, :true %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit "編集を保存", class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+  
+     

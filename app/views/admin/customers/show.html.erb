@@ -4,15 +4,15 @@
     <h2>会員詳細</h2>
       <div class="field">
           <span>会員ID</span>
-          <span><%= @customer.last_name %></span>
+          <span><%= @customer.id %></span>
       </div>
        <div class="field">
           <span>氏名</span>
-          <span><%= @customer.last_name %></span>
+          <span><%= @customer.last_name %> <%= @customer.first_name %></span>
       </div>
       <div class="field">
           <span>フリガナ</span>
-          <span><%= @customer.last_name_kana %></span>
+          <span><%= @customer.last_name_kana %> <%= @customer.first_name_kana %></span>
       </div>
       <div class="field">
           <span>郵便番号</span>
@@ -32,8 +32,12 @@
       </div>
       <div class="field">
           <span>ステータス</span>
-          <span><%= @customer.last_name %></span>
+          <span><%= @customer.is_deleted %></span>
       </div>
+      <div class='row'>
+     <span> <%= link_to edit_admin_customer_path(@customer),class: "btn btn-outline-secondary btn-block edit_public_customer_#{@customer.id}" do %> 編集する<% end %></span>
+     <span> <%= link_to admin_items_path(),class: "btn btn-outline-secondary btn-block edit_public_customer_#{@customer.id}" do %>  注文履歴一覧画面に戻る<% end %></span>
+    </div>
     </div>
   </div>
 </div>
