@@ -1,2 +1,42 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+    <h2>会員情報編集</h2>
+    
+      <%= form_with model:@customer,url:public_customer_path, local:true do |f| %>
+      <div class="form-group">
+      <%= f.label :"氏名" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+      </div>
+       <div class="form-group">
+      <%= f.label :"フリガナ" %>
+      <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+      <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+      </div>
+      
+      <div class="form-group">
+      <%= f.label :"郵便番号" %>
+      <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :"電話番号" %>
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :"メールアドレス" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit "編集を保存", class: 'btn btn-secondary' %>
+      </div>
+      
+      <div>
+        <span> <%= link_to public_customers_confirm_path(@customer.id), class: "btn btn-outline-secondary btn-block confilm_public_customer_#{@customer.id}" do %> 退会する<% end %></span>
+      </div>
+      
+    <% end %>
+    </div>
+  </div>
+</div>
