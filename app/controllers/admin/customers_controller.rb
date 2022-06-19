@@ -9,9 +9,23 @@ class Admin::CustomersController < ApplicationController
     
   end
   def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to admin_customer_path(@customer), notice: "You have updated book successfully."
+    else
+      render "edit"
+    end
   end
 
   def edit
-        @customer = Customer.find(params[:id])
+       @customer = Customer.find(params[:id])
   end
+  
+  private
+  
+  def customer_params
+    params.require(:customer).permit( :email, :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :address, :phone_number)
+  end
+
+  
 end
