@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 
 
   namespace :public do
-    resources :cart_items, only: [:index, :create, :destroy, :update]
     delete 'cart_items/destroy_all'
+    resources :cart_items, only: [:index, :create, :destroy, :update]
+
 
     resources :items, only: [:index, :show]
 
@@ -26,9 +27,10 @@ Rails.application.routes.draw do
 
     resources :deliveries, only: [:index, :edit, :update, :create, :destroy]
 
-    resources :customers, only: [:show, :edit, :update]
     get 'customers/confirm'
     patch 'customers/withdraw'
+    resources :customers, only: [:show, :edit, :update]
+
 
 
   end
