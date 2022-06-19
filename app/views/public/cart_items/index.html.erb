@@ -13,17 +13,17 @@
     <% @sum = 0 %>
     <% @cart_items.each do |c| %>
       <tr>
-          <td><%= image_tag c.get_item_image %>        <%= c.name %>
+          <td><%= image_tag c.item.get_item_image(50, 50) %>        <%= c.item.name %>
           </td>
-          <td><%= cart_item.item.with_tax_price %></td>
-          <td><%= c.select :amount, [['1',1], ['2',2], ['3',3], ['4',4], ['5',5], ['6',6], ['7',7], ['8',8], ['9',9], ['10',10]] %>
-          <%= link_to public_cart_item_path, class: "btn btn-sm btn-success", method: :patch do %>
-          変更
-          <% end %>
-      </td>
-      <td><%= cart_item.subtotal %></td>
-      <td><%= link_to "削除する", public_cart_item_path(c), class: "btn btn-sm btn-danger", metohd: :delete %></td>
-      <% @sum += cart_item.subtotal %>
+          <td><%= c.item.with_tax_price %></td>
+          <td><%= form_with model: c, url: public_cart_item_path(c), method: :patch do |f| %>
+                <%= f.select :amount, [['1',1], ['2',2], ['3',3], ['4',4], ['5',5], ['6',6], ['7',7], ['8',8], ['9',9], ['10',10]] %>
+                <%= f.submit "変更", class: "btn btn-sm  btn-success" %>
+              <% end %>
+          </td>
+      <td><%= c.subtotal %></td>
+      <td><%= button_to "削除する", public_cart_item_path(c.id), class: "btn btn-sm btn-danger", method: :delete %></td>
+      <% @sum += c.subtotal %>
       <% end %>
   </tbody>
 </table>
