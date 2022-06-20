@@ -1,2 +1,39 @@
-<h1>Admin::Items#edit</h1>
-<p>Find me in app/views/admin/items/edit.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+            <h2>NEW ITEM</h2>
+            <%= form_with model: @item, url: admin_item_path(@item.id), method: :patch do |f| %>
+                <div class="form-group">
+                    <label for="item_name">商品名</label>
+                    <%= f.text_field :name, class:"form-control name" %>
+                </div>
+                <div class="form-group">
+                    <label for="item_image">商品画像</label>
+                    <%= f.file_field :item_image, accept: "image/*", class:"form-control-file item_image" %>
+                </div>
+                <div class="form-group">
+                    <label for="item_introduction">商品紹介</label>
+                    <%= f.text_area :introduction, class:"form-control name" %>
+                </div>
+                <div class="form-group">
+                    <label for="item_price">価格</label>
+                    <%= f.number_field :price, class:"form-control name" %>
+                </div>
+                <div class="is_active">
+                    <div>
+                        <%= f.radio_button :is_active, true %>
+                        <%= f.label :is_active, '販売中', value: true %>
+                    </div>
+                    <div>
+                        <%= f.radio_button :is_active, false %>
+                        <%= f.label :is_active, '販売停止中', value: false %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <%= f.submit '作成', class:"btn btn-secondary" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+    

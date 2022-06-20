@@ -19,6 +19,16 @@
                     <label for="item_price">価格</label>
                     <%= f.number_field :price, class:"form-control name" %>
                 </div>
+                <div class="is_active">
+                    <div>
+                        <%= f.radio_button :is_active, true %>
+                        <%= f.label :is_active, '販売中', value: true %>
+                    </div>
+                    <div>
+                        <%= f.radio_button :is_active, false %>
+                        <%= f.label :is_active, '販売停止中', value: false %>
+                    </div>
+                </div>
                 <div class="form-group">
                     <%= f.submit '作成', class:"btn btn-secondary" %>
                 </div>
