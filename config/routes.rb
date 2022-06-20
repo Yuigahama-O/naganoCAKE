@@ -28,8 +28,12 @@ Rails.application.routes.draw do
     resources :deliveries, only: [:index, :edit, :update, :create, :destroy]
 
     get 'customers/confirm'
-    patch 'customers/withdraw'
-    resources :customers, only: [:show, :edit, :update]
+    # patch 'customers/withdraw' => 'customers#withdraw' , as: 'withdraw'
+    resources :customers, only: [:show, :edit, :update] do
+      collection do
+      patch :withdraw
+      end
+    end
 
 
 
