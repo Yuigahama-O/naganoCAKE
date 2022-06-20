@@ -1,12 +1,53 @@
-  <header>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href=>新規登録</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-      </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>naganoCAKE</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if customer_signed_in? %>
+          <li>
+            <%= link_to public_customer_path(current_customer),class: 'nav-link text-light' do %>
+              マイページ
+            <% end %>
+          </li>
+          <li>
+            <%=  link_to public_items_path,class: 'nav-link text-light' do %>
+              商品一覧
+            <% end %>
+          </li>
+          <li>
+            <%=  link_to public_cart_items_path ,class: 'nav-link text-light' do %>
+              カート
+            <% end %>
+          </li>
+          <li>
+            <%= button_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
+               logout
+            <% end %>
+          </li>
+        <% else %>
+
+          <li>
+            <%= link_to homes_about_path,class: 'nav-link text-light' do %>
+               About
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_customer_registration_path,class: 'nav-link text-light' do %>
+               ログイン
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_customer_session_path ,class: 'nav-link text-light' do %>
+              新規登録
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
+</header>
