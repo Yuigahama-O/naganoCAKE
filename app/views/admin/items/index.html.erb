@@ -4,20 +4,33 @@
 <% end %>
 <div class = "container">
     <div class = "row">
-        <% @items.each do |item| %>
-            <div class = "col">
-                  <div class="style-scope ytd-rich-grid-row">
-                    <%= link_to admin_item_path(item.id) do %>
-                        <%= image_tag item.get_item_image(150, 150), class:"style-scope yt-img-shadow" %>
-                        <div class="style-scope ytd-rich-grid-media">
-                            <%= item.name %>
-                        </div>
-                        <div class="style-scope ytd-rich-grid-media">
-                            <%= item.price %>円（税抜き）
-                        </div>
-                    <% end %>
-                </div>
-            </div>
-        <% end %>
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>商品ID</th>
+                    <th>商品名</th>
+                    <th>税抜価格</th>
+                    <th>ジャンル</th>
+                    <th>ステータス</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% @items.each do |item| %>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td>
+                            <%= link_to admin_item_path(item.id) do %>
+                                <%= item.name %>
+                            <% end %>
+                        </td>
+                        <td><%= item.price %></td>
+                        <td></td>
+                        <td><%= item.is_active ? '販売中' : '販売停止中' %></td>
+                    </tr>
+                <% end %>
+                
+            </tbody>
+        </table>
     </div>
 </div>
