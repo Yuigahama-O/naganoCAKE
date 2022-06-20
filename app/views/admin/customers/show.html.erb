@@ -32,7 +32,11 @@
       </div>
       <div class="field">
           <span>ステータス</span>
-          <span><%= @customer.is_deleted %></span>
+           <% if @customer.is_deleted == true %>
+            <td>無効である</td>
+           <% else %>
+             <td>有効である</td>
+             <% end %>
       </div>
       <div class='row'>
      <span> <%= link_to edit_admin_customer_path(@customer),class: "btn btn-outline-secondary btn-block edit_public_customer_#{@customer.id}" do %> 編集する<% end %></span>

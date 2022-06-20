@@ -18,8 +18,12 @@
           <td><%= customer.id %></td>
           <td><%= customer.last_name %> <%= customer.last_name %></td>
           <td><%= customer.email %></td>
-          <td><%= customer.is_deleted %></td>
-          <% end %>
+           <% if customer.is_deleted == true %>
+            <td>無効である</td>
+           <% else %>
+             <td>有効である</td>
+             <% end %>
+           <% end %>
         </tbody>
       </table>
     </div>

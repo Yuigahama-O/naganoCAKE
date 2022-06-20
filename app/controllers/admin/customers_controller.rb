@@ -11,6 +11,11 @@ class Admin::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
+      if @customer.is_deleted == true
+        @customer.update(is_deleted: false)
+      else
+        @customer.update(is_deleted: true)        
+      end
       redirect_to admin_customer_path(@customer), notice: "You have updated book successfully."
     else
       render "edit"
