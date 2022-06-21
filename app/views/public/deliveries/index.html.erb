@@ -1,2 +1,51 @@
-<h1>Public::Deliveries#index</h1>
-<p>Find me in app/views/public/deliveries/index.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+            <h2>配送先一覧</h2>
+            <%= form_with model: @delivery, url: public_deliveries_path, method: :post do |f| %>
+                <div class="form-group">
+                    <label for="postal_code">郵便番号（ハイフンなし）</label>
+                    <%= f.text_field :postal_code, class:"form-control name" %>
+                </div>
+                <div class="form-group">
+                    <label for="postal_code">住所</label>
+                    <%= f.text_field :address, class:"form-control name" %>
+                </div>
+                <div class="form-group">
+                    <label for="item_introduction">宛名</label>
+                    <%= f.text_field :name, class:"form-control name" %>
+                </div>
+                <div class="form-group">
+                    <%= f.submit '新規登録', class:"btn btn-secondary" %>
+                </div>
+            <% end %>
+            
+            <table class='table'>
+                <thead>
+                  <tr>
+                    <th>郵便番号</th>
+                    <th>住所</th>
+                    <th>宛名</th>
+                    <th colspan="2"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% @deliveries.each do |delivery| %>
+                    <tr>
+                        <td><%= delivery.postal_code %></td>
+                        <td><%= delivery.address %></td>
+                        <td><%= delivery.name %></td>
+                        <td>
+                            <%= link_to "編集する", edit_public_delivery_path(delivery.id), class: "btn btn-success" %>
+                        </td>
+                        <td>
+                            <%= link_to "削除する", public_delivery_path(delivery.id), class:"btn btn-sm btn-danger", method: :delete %>
+                        </td>
+                    </tr>          
+                  <% end %>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+    
