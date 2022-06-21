@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :customers
   namespace :admin do
-    resources :jenres, only: [:index, :edit, :update, :create]
+    resources :genres, only: [:index, :edit, :update, :create]
 
     resources :items, only: [:new, :index, :show, :edit, :create, :update]
 
@@ -21,9 +21,10 @@ Rails.application.routes.draw do
 
     resources :items, only: [:index, :show]
 
-    resources :orders, only: [:new, :index, :show, :create]
-    post 'orders/comfirm'
+    post 'orders/confirm'
     get 'orders/complete'
+    resources :orders, only: [:new, :index, :show, :create]
+
 
     resources :deliveries, only: [:index, :edit, :update, :create, :destroy]
 
