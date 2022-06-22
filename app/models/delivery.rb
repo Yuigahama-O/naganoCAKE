@@ -1,6 +1,6 @@
 class Delivery < ApplicationRecord
   
-  belongs_to :customer, dependent: :destroy
+  belongs_to :customer
 
   def full_address
     '〒' + postal_code + ' ' + address + ' ' + name

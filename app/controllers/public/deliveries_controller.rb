@@ -1,14 +1,15 @@
 class Public::DeliveriesController < ApplicationController
   def index
-    @deliveries = Delivery.all
+    @delivery = current_customer.deliveries.new
+    @deliveries = current_customer.deliveries.all
   end
 
   def edit
-    @delivery = Delivery.find(params[:id])
+    @delivery = current_customer.deliveries.find(params[:id])
   end
   
   def create
-    @delivery = Delivery.new(deliveries_params)
+    @delivery = current_customer.deliveries.new(delivery_params)
     @delivery.save
     redirect_to public_deliveries_path
   end
@@ -20,7 +21,7 @@ class Public::DeliveriesController < ApplicationController
   end
   
   def update
-    @delivery = Delivery.find(params[:id])
+    @delivery = current_customer.deliveries.find(params[:id])
     @delivery.update(delivery_params)
     redirect_to public_deliveries_path
   end

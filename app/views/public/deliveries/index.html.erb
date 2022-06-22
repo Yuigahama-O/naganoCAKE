@@ -36,13 +36,13 @@
                         <td><%= delivery.address %></td>
                         <td><%= delivery.name %></td>
                         <td>
-                            <%= link_to "編集する", edit_public_delivery_path(delivery.id), class: "btn btn-success" %>
+                            <%= link_to "編集する", edit_public_delivery_path(delivery.id), class: "btn btn-sm btn-success" %>
                         </td>
                         <td>
-                            <%= link_to "削除する", public_delivery_path(delivery.id), class:"btn btn-sm btn-danger", method: :delete %>
+                            <%= link_to "削除する", public_delivery_path(delivery.id), class: "btn btn-sm btn-danger", method: :delete %>
                         </td>
                     </tr>          
-                  <% end %>
+                <% end %>
                 </tbody>
               </table>
         </div>
