@@ -23,6 +23,10 @@
                     <th><%= @item.price %></th>
                 </tr>
                 <tr>
+                    <th>ジャンル</th>
+                    <th><%= @item.genre.genre %></th>
+                </tr>
+                <tr>
                     <th><%= @item.is_active ? '販売中' : '販売停止中' %></th>
                 </tr>
                 <tr>

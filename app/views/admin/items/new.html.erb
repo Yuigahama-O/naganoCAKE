@@ -19,7 +19,12 @@
                     <label for="item_price">価格</label>
                     <%= f.number_field :price, class:"form-control name" %>
                 </div>
+                <div class="genre">
+                    <label for="item_price">ジャンル</label>
+                    <%= f.collection_select :genre_, Genre.all, :id, :genre, include_blank: "選択して下さい" %>
+                </div>
                 <div class="is_active">
+                    <label for="item_introduction">商品ステータス</label>
                     <div>
                         <%= f.radio_button :is_active, true %>
                         <%= f.label :is_active, '販売中', value: true %>
