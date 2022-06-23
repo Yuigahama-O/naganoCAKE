@@ -1,35 +1,36 @@
 <h2>商品一覧</h2>
-
-<div class = "container container-m">
-    <div class = "row">
+<div class = "container" >
+    <div class = "row" >
     
    
-        <% @items.each do |item| %>
-         <div class = "col-sm-2"></div>
-        <div class = "col-sm-8">
-        <div class = "card-deck">
-            <div class="card">
-                <%= link_to public_item_path(item.id) do %>
-                    <%= image_tag item.get_item_image(150, 150) %>
-                    <div class = "card-body"></div>    
-                        <div class="card-title">
-                            <%= item.name %>
-                        </div>
-                        <div class="card-title">
-                            <%= item.price %>円（税抜き）
-                        </div>
-                        
-                    </div>
-                <% end %>  
-            </div>
-            </div>
-            </div>
-            <div class = "col-sm-2"></div>
-       <% end %>
+    <% @items.each do |item| %>
+    
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <div class="card">
+            <%= link_to public_item_path(item.id), {class: "index-card"} do %>
+                
+                <div class = "card-body">
+                    <%= image_tag item.get_item_image(100, 100) %>
+                </div>    
+                <div class="card-title">
+                    <%= item.name %>
+                </div>
+                <div class="card-title">
+                    <%= item.price %>円（税抜き）
+                </div>
+                    
+                </div>
+            <% end %>  
+        </div> 
+        </div>
+        
+   <% end %>
+   
+   </div>
+</div>
        
     
     
-    </div>
-</div>
+    
  
 
