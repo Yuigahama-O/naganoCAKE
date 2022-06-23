@@ -38,9 +38,9 @@
 
 <h2>支払方法</h2>
 <% if @payment_method == "transfer" %>
-  銀行振込
+  <%= Order.payment_methods_i18n[:transfer] %>
 <% else %>
-  クレジットカード
+  <%= Order.payment_methods_i18n[:credit_card] %>
 <% end %>
 
 <h2>お届け先</h2>
