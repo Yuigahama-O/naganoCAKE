@@ -27,7 +27,17 @@
                     <th><%= @item.genre.genre %></th>
                 </tr>
                 <tr>
-                    <th><%= @item.is_active ? '販売中' : '販売停止中' %></th>
+                    <th>
+                        <% if @item.is_active == true %>
+                            <div class = "green" >
+                                <%= @item.is_active ? '販売中' : '販売停止中' %>
+                            </div>
+                        <% else %>
+                            <div class = "gray">
+                                <%= @item.is_active ? '販売中' : '販売停止中' %>
+                            </div>
+                        <% end %>
+                    </th>
                 </tr>
                 <tr>
                     <th>
