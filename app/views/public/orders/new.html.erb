@@ -21,13 +21,14 @@
 
   <%= f.radio_button :address_option, :choose_address %>
   <%= f.label :address_option, "登録済住所から選択" %>
-  <%= f.select :delivery,options_from_collection_for_select(Delivery.all, :id, :full_address) %>
+  <%= f.select :delivery,options_from_collection_for_select(current_customer.deliveries, :id, :full_address) %>
 
 
   <br>
 
   <%= f.radio_button :address_option, :new_address %>
-  <%= f.label :address_option, "新しいお届け先" %>
+  <%= f.label :address_option, "新しいお届け先" %><br />
+  <%= notice %>
 
     <div class="field">
     <%= f.label :"郵便番号(ハイフンなし)" %><br />
