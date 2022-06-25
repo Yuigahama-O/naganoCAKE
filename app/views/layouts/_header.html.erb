@@ -28,9 +28,13 @@
                ログアウト
             <% end %>
           </li>
-        <% else %>
-
-          <li>
+        <% elsif admin_signed_in? %>
+           <li>
+            <%= link_to destroy_admin_session_path, method: :delete do %>
+            ログアウト
+            <% end %>
+           </li>
+        <li>
             <%= link_to homes_about_path,class: 'nav-link text-light' do %>
               　about
             <% end %>
