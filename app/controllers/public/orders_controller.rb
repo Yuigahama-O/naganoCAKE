@@ -17,7 +17,7 @@ class Public::OrdersController < ApplicationController
 
 
   def confirm
-    @order = Order.new(order_params)
+    @order = current_customer.orders.new(order_params)
 
 
     if params[:order][:address_option] == "my_address"
@@ -34,6 +34,7 @@ class Public::OrdersController < ApplicationController
 
     else
       if @order.invalid?
+        flash[:notice] = "入力してください"
         render 'new'
       else
         @order.postal_code = params[:order][:postal_code]

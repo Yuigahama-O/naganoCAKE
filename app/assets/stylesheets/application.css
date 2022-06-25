@@ -13,4 +13,73 @@
  *= require_tree .
  *= require_self
  */
- 
+
+ *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+main{
+    margin: 50px;
+}
+
+
+
+.index-card{
+    width: 200px;
+    margin: 10px;
+}
+
+.card{
+    width: 200px;
+    heigth: 250px;
+}
+
+.index-title{
+    text-align: center;
+}
+
+.index-body{
+    padding: 20px 10px 0px 10px;
+}
+
+.price{
+    margin: 30px 0px;
+}
+
+.cart{
+    margin: 30px 0px;
+}
+
+
+.green{
+    color: #00ff00;
+} 
+
+.gray{
+    color: #c0c0c0; 
+}
+
+.red{
+    color: #ff0000;
+}
+
+.title{
+    margin: 20px 0px 0px 0px;
+}
+
+.show{
+    margin: 20px;
+}
+
+.edit{
+    margin: 40px 20px 20px 20px;
+}
+
+.cart{
+   
+}
+
+
+

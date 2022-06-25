@@ -28,11 +28,21 @@
                         
                         <td><%= item.genre.genre %></td>
                         
-                        <td><%= item.is_active ? '販売中' : '販売停止中' %></td>
+                        <td><% if item.is_active == true %>
+                                <div class = "green" >
+                                    <%= item.is_active ? '販売中' : '販売停止中' %>
+                                </div>
+                            <% else %>
+                                <div class = "gray">
+                                    <%= item.is_active ? '販売中' : '販売停止中' %>
+                                </div>
+                            <% end %>
+                        </td>
                     </tr>
                 <% end %>
                 
             </tbody>
         </table>
+        <%= paginate @items %>
     </div>
 </div>
