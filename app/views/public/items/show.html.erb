@@ -17,7 +17,7 @@
                 <%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
                   <% if @item.is_active == true %>
                     <%= f.select :amount, [['1',1], ['2',2], ['3',3], ['4',4], ['5',5], ['6',6], ['7',7], ['8',8], ['9',9], ['10',10]] %>
-                    <%= f.submit 'カートにいれる', class:"btn btn-secondary" %>
+                    <%= f.submit 'カートにいれる', class:"btn btn-success" %>
                     <%= f.hidden_field :item_id, value: @item.id %>
                     <% else %>
                     <div class = "red">
