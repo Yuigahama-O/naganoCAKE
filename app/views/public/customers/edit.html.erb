@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-md-8 offset-md-1">
     <h2>会員情報編集</h2>
-    
+     <% if @customer.errors.any? %>
+          <%= @customer.errors.count %>件のerrorが発生しました
+     <% end %>
       <%= form_with model:@customer,url:public_customer_path, local:true do |f| %>
       <div class="form-group">
       <%= f.label :"氏名" %>
