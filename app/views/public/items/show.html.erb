@@ -1,27 +1,31 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-            <%= link_to public_items_path do %>
-                商品一覧へ
-            <% end %>
-            <%= image_tag @item.get_item_image(100, 100) %>
-            <%= @item.name %>
-            <%= @item.price %>
-            <%= @item.introduction %>
-            <%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
-              
-              <% if @item.is_active == true %>
-                <%= f.select :amount, [['1',1], ['2',2], ['3',3], ['4',4], ['5',5], ['6',6], ['7',7], ['8',8], ['9',9], ['10',10]] %>
-                <%= f.submit 'カートにいれる', class:"btn btn-secondary" %>
-                <%= f.hidden_field :item_id, value: @item.id %>
-                <% else %>
-                <div class = "red">
-                    <%= @item.is_active ? '販売中' : '販売停止中' %>
-                </div>
-            <% end %>
-              
-              
-            <% end %>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+            <%= image_tag @item.get_item_image(200, 200) %>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class = "col-sm-5">
+            <h2><%= @item.name %></h2>
+            <h4><%= @item.introduction %></h4>
+            <div class = "price">
+                <h2 style="display:inline">￥<%= @item.price %></h2>
+                <p style="display:inline">(税込み)</p>
+            </div>
+          
+            <div class= "cart">
+                <%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
+                  <% if @item.is_active == true %>
+                    <%= f.select :amount, [['1',1], ['2',2], ['3',3], ['4',4], ['5',5], ['6',6], ['7',7], ['8',8], ['9',9], ['10',10]] %>
+                    <%= f.submit 'カートにいれる', class:"btn btn-secondary" %>
+                    <%= f.hidden_field :item_id, value: @item.id %>
+                    <% else %>
+                    <div class = "red">
+                        <h3><%= @item.is_active ? '販売中' : '販売停止中' %></h3>
+                    </div>
+                　<% end %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
