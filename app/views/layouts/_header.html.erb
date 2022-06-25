@@ -7,15 +7,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
-        <% if customer_signed_in? %>
-          <li>
-            <%= link_to public_customer_path(current_customer),class: 'nav-link text-light' do %>
-              マイページ
+          
+           <li>
+            <%= link_to homes_about_path,class: 'nav-link text-light' do %>
+              　about
             <% end %>
           </li>
           <li>
             <%=  link_to public_items_path,class: 'nav-link text-light' do %>
               商品一覧
+            <% end %>
+          </li>
+        <% if customer_signed_in? %>
+          <li>
+            <%= link_to public_customer_path(current_customer),class: 'nav-link text-light' do %>
+              マイページ
             <% end %>
           </li>
           <li>
@@ -34,9 +40,10 @@
             ログアウト
             <% end %>
            </li>
-        <li>
-            <%= link_to homes_about_path,class: 'nav-link text-light' do %>
-              　about
+            <% else %>
+            <li>
+            <%= link_to new_customer_registration_path ,class: 'nav-link text-light' do %>
+              新規登録
             <% end %>
           </li>
           <li>
@@ -44,12 +51,7 @@
                ログイン
             <% end %>
           </li>
-          <li>
-            <%= link_to new_customer_registration_path ,class: 'nav-link text-light' do %>
-              新規登録
-            <% end %>
-          </li>
-        <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
