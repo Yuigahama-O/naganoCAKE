@@ -1,6 +1,6 @@
   <div class="container px-5 px-sm-0">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-1">
         
         
         </div>        
@@ -9,30 +9,30 @@
           <p>ようこそ、ながのCAKEへ！</br>
              このサイトはケーキ販売のECサイトになります。</br>
              会員でない方も商品の閲覧はできますが、購入には会員登録が必要になります。</p>
-          <table class="table table-hover table-inverse">
-            <thead>
-            <tr>
-              <th>
-                新着商品
-              </th>
-            </tr>
-            </thead>
-            <tbody>
-             <% @items.each do |item| %>
-             <div class="row">
-               <div class="col-3">
-               <tr>
-                <td> <%= link_to public_item_path(item.id) do %> <%= image_tag item.get_item_image(100,100) %>
-                <% end %></td>
-                <td><%= link_to item.name, public_item_path(item.id) %></td>
-                <td><%= item.price %><% end %></td>
-                </tr>
-                </div>
+          <h2>新着商品</h2> 
+          <div class = "top-card">
+            <% @items.each do |item| %>
+              <div class="index-card">
+                  <%= link_to public_item_path(item.id), {class: "link"} do %>
+                      <div class = "index-body">
+                          <%= image_tag item.get_item_image(100, 100) %>
+                      </div>    
+                      <div class="index-title">
+                          <%= item.name %>
+                      </div>
+                      <div class="index-title">
+                          ￥<%= item.price %>円
+                      </div>
+                  <% end %> 
               </div>
-            </tbody>
-          </table>
+            
+             
+        <% end %>
+        </div>
         </div>
        </div>
-      <%= link_to "全ての商品を見る", public_items_path() %>
+       <div class = "top-link">
+        <%= link_to "全ての商品を見る", public_items_path() %>
+      </div>
     </div>
   </div>

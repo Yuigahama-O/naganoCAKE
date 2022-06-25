@@ -21,14 +21,21 @@
 }
 
 main{
-    margin: 50px;
+    padding: 40px;
+    background-color: #FFFFEE;
 }
 
-
+header{
+    background-color: #CCFFFF;
+}
 
 .index-card{
     width: 200px;
     margin: 10px;
+}
+
+.top-card{
+    display: flex;
 }
 
 .card{
@@ -36,8 +43,38 @@ main{
     heigth: 250px;
 }
 
+.about{
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+.new{
+    display:flex;
+    margin: 0px 15px 5px 0px;
+}
+
+.new-btn{
+    margin: 0px 0px 0px 240px;
+}
+
+.top-link{
+    width: 100%;
+    text-align: right;
+}
+
 .index-title{
     text-align: center;
+    color: #000000;
+}
+
+.title-name{
+    width: 400px;
+    text-align: center;
+    background-color: #CBFFD3;
+}
+
+.customer-show{
+    margin: 10px 0px 5px 0px;
 }
 
 .index-body{
@@ -77,8 +114,25 @@ main{
     margin: 40px 20px 20px 20px;
 }
 
-.cart{
-   
+.delivery{
+    margin: 10px 20px 0px 20px;
+}
+
+.customer-show{
+    margin: 30px 0px 0px 0px;
+}
+
+.destroy{
+    margin: 0px 0px 0px 50px;
+}
+
+
+
+
+footer{
+  width: 100%;
+    background-color: #CCFFFF;
+    padding: 30px 0;
 }
 
 

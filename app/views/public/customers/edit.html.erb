@@ -30,12 +30,12 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       
-      <div class="form-group">
-        <%= f.submit "編集を保存", class: 'btn btn-secondary' %>
+      <div class="form-group" style="display:inline">
+        <%= f.submit "編集内容を保存", class: 'btn btn-success' %>
       </div>
       
-      <div>
-        <span> <%= link_to public_customers_confirm_path(), class: "btn btn-outline-secondary btn-block confilm_public_customer_#{@customer.id}" do %> 退会する<% end %></span>
+      <div style="display:inline" class= "destroy">
+        <span><%= link_to public_customers_confirm_path(), class: "btn btn-danger confilm_public_customer_#{@customer.id}" do %> 退会する<% end %></span>
       </div>
       
     <% end %>
