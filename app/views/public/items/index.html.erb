@@ -1,7 +1,7 @@
-<h2>商品一覧</h2>
+
 <div class = "container-sm" >
     <div class = "row">
-        
+    <h2>商品一覧 全<%= @item_all.count %>件</h2>  
     </div>
     
     <div class = "row">
@@ -9,19 +9,17 @@
         <% @items.each do |item| %>
             
                 <div class="index-card">
-                    <div class="card">
-                        <%= link_to public_item_path(item.id), {class: "link"} do %>
-                            <div class = "card-body">
-                                <%= image_tag item.get_item_image(150, 150) %>
-                            </div>    
-                            <div class="card-title">
-                                <%= item.name %>
-                            </div>
-                            <div class="card-title">
-                                <%= item.price %>円（税抜き）
-                            </div>
-                        <% end %> 
-                    </div>
+                    <%= link_to public_item_path(item.id), {class: "link"} do %>
+                        <div class = "index-body">
+                            <%= image_tag item.get_item_image(150, 150) %>
+                        </div>    
+                        <div class="index-title">
+                            <%= item.name %>
+                        </div>
+                        <div class="index-title">
+                            <%= item.price %>円（税抜き）
+                        </div>
+                    <% end %> 
                 </div>
              
         <% end %>

@@ -3,12 +3,13 @@
         <%= link_to admin_items_path do %>
                 商品一覧へ
         <% end %>
-        <div class="col-sm4">
+        <div class = "col-sm-3"></div>
+        <div class="col-sm-3">
             
-            <%= image_tag @item.get_item_image(100, 100) %>
+            <%= image_tag @item.get_item_image(200, 200) %>
         </div>
-        <div class = "col-sm8">
-            <table>
+        <div class = "col-sm-4">
+            <table class = "show">
             <tbody>
                 <tr>
                     <th>商品名</th>
@@ -29,11 +30,11 @@
                 <tr>
                     <th>
                         <% if @item.is_active == true %>
-                            <div class = "green" >
+                            <div class = "green title">
                                 <%= @item.is_active ? '販売中' : '販売停止中' %>
                             </div>
                         <% else %>
-                            <div class = "gray">
+                            <div class = "red title">
                                 <%= @item.is_active ? '販売中' : '販売停止中' %>
                             </div>
                         <% end %>
@@ -41,7 +42,9 @@
                 </tr>
                 <tr>
                     <th>
-                        <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success" %>
+                        <div class = "edit">
+                            <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success" %>
+                        </div>
                     </th>
                 </tr>
             </tbody>
