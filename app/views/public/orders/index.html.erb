@@ -1,4 +1,7 @@
 <h2>注文履歴一覧</h2>
+<% if @orders.each.count == 0 %>
+<p>注文はありません</p>
+<% else %>
 
 <table class="table">
    <thead>
@@ -28,3 +31,5 @@
     <% end %>
    </tbody>
 </table>
+
+<% end %>
