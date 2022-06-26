@@ -51,7 +51,7 @@
               <td><%= o.price %></td>
               <td><%= o.amount %></td>
               <td><%= o.subtotal %></td>
-              <td><%= form_with model: @order_detail, url: admin_order_detail_path(@order_detail), method: :patch do |f| %>
+              <td><%= form_with model: o, url: admin_order_detail_path(o), method: :patch do |f| %>
                     <%= f.select :making_status, OrderDetail.making_statuses_i18n.invert %>
                     <%= f.submit "更新", class: "btn btn-sm btn-success" %>
                   <% end %>
@@ -61,7 +61,7 @@
         </tbody>
       </table>
     </div>
-    
+
     <div class = "col-sm-3 order-show">
       <table class = "none">
         <tr class = "none">

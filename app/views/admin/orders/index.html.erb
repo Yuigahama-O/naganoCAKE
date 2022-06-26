@@ -15,15 +15,13 @@
    <tbody>
     <% @orders.each do |o| %>
       <tr>
-        <td>
-            <%= link_to admin_order_path(o.id), class: "black" do %>
-                <%= o.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+        <td><%= link_to admin_order_path(o) do %>
+              <%= o.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
             <% end %>
         </td>
-        <td>
-            <%= link_to admin_customer_path(o), class: "black" do %>
-                <%= o.customer.last_name + o.customer.first_name %>
-            <% end %>   
+        <td><%= link_to admin_customer_path(o.customer_id) do %>
+              <%= o.customer.last_name + o.customer.first_name %>
+            <% end %>
         </td>
         <td><%= o.order_details.sum(:amount) %></td>
         <td><%= o.status_i18n %></td>
