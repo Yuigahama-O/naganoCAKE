@@ -22,11 +22,13 @@
         </tr>
         <tr>
           <th class = "none">注文ステータス　</th>
-          <%= form_with model: @order, url: admin_order_path(@order), method: :patch do |f| %>
-            <td class = "none"><%= f.select :status, Order.statuses_i18n.invert %>
+
+            <td class = "none">
+              <%= form_with model: @order, url: admin_order_path(@order), method: :patch do |f| %>
+              <%= f.select :status, Order.statuses_i18n.invert %>
                 <%= f.submit "更新", class: "btn btn-sm btn-success" %>
-            </td>
-          <% end %>
+              <% end %>
+           </td>
         </tr>
       </table>
     </div>
