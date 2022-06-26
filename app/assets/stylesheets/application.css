@@ -21,7 +21,7 @@
 }
 
 main{
-    padding: 40px;
+    padding: 40px 40px 10px 40px;
     background-color: #FFFFEE;
 }
 
@@ -54,7 +54,7 @@ header{
 }
 
 .new-btn{
-    margin: 0px 0px 0px 240px;
+    margin: 0px 0px 0px 200px;
 }
 
 .top-link{
@@ -73,6 +73,12 @@ header{
     background-color: #CBFFD3;
 }
 
+.item-title-name{
+    width: 200px;
+    text-align: center;
+    background-color: #CBFFD3;
+}
+
 .customer-show{
     margin: 10px 0px 5px 0px;
 }
@@ -86,7 +92,11 @@ header{
 }
 
 .cart{
-    margin: 30px 0px;
+    text-align: left;
+}
+
+.cart-center{
+    text-align: center;
 }
 
 
@@ -108,6 +118,7 @@ header{
 
 .show{
     margin: 20px;
+    border: none;
 }
 
 .edit{
@@ -118,7 +129,7 @@ header{
     margin: 10px 20px 0px 20px;
 }
 
-.customer-show{
+.customer-show-title{
     margin: 30px 0px 0px 0px;
 }
 
@@ -126,6 +137,160 @@ header{
     margin: 0px 0px 0px 50px;
 }
 
+.order-show{
+    margin: 20px 0px 0px 0px;
+}
+
+.order-title{
+    width: 200px;
+    text-align: center;
+    background-color: #CBFFD3;
+    margin: 0px 0px 0px 100px;
+    
+}
+
+.cart-title{
+    width: 300px;
+    text-align: center;
+    background-color: #CBFFD3;
+    margin: 0px 0px 0px 100px;
+}
+
+.cart-index{
+    text-align: right;
+    margin: 5px;
+}
+
+table, th, td {
+    border: 2px solid #dee2e6;
+}
+
+th{
+    background-color: #C2EEFF;
+}
+
+.show-name{
+    background-color: #FFFFEE;
+}
+
+.cart-new{
+    margin: 20px 0px 0px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.confirm-btn{
+    text-align: center;
+    margin: 50px 0px 50px 0px;
+}
+
+.confirm{
+    margin: 20px 0px 0px 0px;
+}
+
+.confrim-text{
+    width: 100%;
+}
+
+.customer-btn{
+    display: flex;
+    
+}
+
+.customer-edit{
+    margin: 0px 100px 0px 250px;
+}
+
+.none{
+    border: none;
+    background-color: #FFFFEE;
+}
+
+.genre{
+    background-color: #C2EEFF;
+}
+
+.genre-edit{
+    margin: 20px 0px;
+}
+
+.customer-show{
+    text-align: center;
+}
+
+.customer-show-edit{
+    margin: 0px 50px 0px 50px;
+}
+
+.order-show{
+    margin: 40px 0px 0px 0px;
+}
+
+.order-table{
+    margin: 30px 0px 0px 0px;
+}
+
+.customer-success{
+    text-align: center;
+}
+
+.black{
+    color: #000000;
+}
+
+.customer-title{
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+}
+
+.customer-text{
+    text-align: center;
+}
+
+.customer-destroy{
+    text-align: center;
+    display: flex;
+    width: 100%;
+    margin: 0px 0px 0px 480px;
+}
+
+.destroy-btn{
+    margin: 0px 0px 0px 30px;
+}
+
+.delivery-index{
+    text-align: center;
+}
+
+.admin-index-new{
+    margin: 0px 0px 0px 1080px;
+    text-align: right;
+    color: #000000;
+}
+
+.item-show-text{
+    margin: 20px 0px;
+}
+
+.is_active{
+    display: flex;
+}
+
+.is_active-radio{
+    margin: 0px 10px 0px 10px;
+}
+
+.item-edit-btn{
+    text-align: center;
+}
+
+.delivery-address{
+    margin: 0px 150px 0px 0px;
+}
+
+.delivery-name{
+    margin: 0px 150px 0px 0px;
+}
 
 
 

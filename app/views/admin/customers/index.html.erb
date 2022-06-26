@@ -1,27 +1,31 @@
 <div class='container px-5 px-sm-0'>
   <div class="row">
     <div class='col-md-8 offset-md-1'>
-    <h2>会員一覧</h2>
+    <h2 class= "title-name">会員一覧</h2>
       <table class='table'>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>会員ID</th>
             <th>氏名</th>
             <th>メールアドレス</th>
             <th>ステータス</th>
-            <th colspan="4"></th>
+            
           </tr>
         </thead>
         <tbody>
         <% @customers.each do |customer| %>
         <tr>
           <td><%= customer.id %></td>
-          <td><%= customer.last_name %> <%= customer.last_name %></td>
+          <td>
+            <%= link_to admin_customer_path(customer.id), class: "black" do %>
+              <%= customer.last_name %> <%= customer.first_name %>
+            <% end %>  
+          </td>
           <td><%= customer.email %></td>
            <% if customer.is_deleted == true %>
-            <td>無効である</td>
+            <td class = "gray">無効</td>
            <% else %>
-             <td>有効である</td>
+             <td class = "green">有効</td>
              <% end %>
            <% end %>
         </tbody>

@@ -1,47 +1,46 @@
 <div class="container px-5 px-sm-0">
     <div class="row">
-        <%= link_to admin_items_path do %>
-                商品一覧へ
-        <% end %>
         <div class = "col-sm-3"></div>
-        <div class="col-sm-3">
-            
+        <div class="col-sm-2">
+            <h2 class="item-title-name">商品詳細</h2>
             <%= image_tag @item.get_item_image(200, 200) %>
         </div>
-        <div class = "col-sm-4">
+        <div class = "col-sm-1"></div>
+        <div class = "col-sm-4 item-show-text">
             <table class = "show">
             <tbody>
-                <tr>
-                    <th>商品名</th>
-                    <th><%= @item.name %></th>
+                <tr class = "none">
+                    <th class = "none">商品名</th>
+                    <th class = "none"><%= @item.name %></th>
                 </tr>
-                <tr>
-                    <th>商品説明</th>
-                    <th><%= @item.introduction %></th>
+                <tr class = "none">
+                    <th class = "none">商品説明</th>
+                    <th class = "none"><%= @item.introduction %></th>
                 </tr>
-                <tr>
-                    <th>税抜価格</th>
-                    <th><%= @item.price %></th>
+                <tr class = "none">
+                    <th class = "none">ジャンル</th>
+                    <th class = "none"><%= @item.genre.genre %></th>
                 </tr>
-                <tr>
-                    <th>ジャンル</th>
-                    <th><%= @item.genre.genre %></th>
+                <tr class = "none">
+                    <th class = "none">税込価格</br>(税抜価格)</th>
+                    <th class = "none"><%= @item.with_tax_price%>(<%= @item.price %>)円</th>
                 </tr>
-                <tr>
-                    <th>
+                <tr class = "none">
+                    <th class = "none">販売ステータス</th>
+                    <th class = "none">
                         <% if @item.is_active == true %>
-                            <div class = "green title">
+                            <div class = "green">
                                 <%= @item.is_active ? '販売中' : '販売停止中' %>
                             </div>
                         <% else %>
-                            <div class = "red title">
+                            <div class = "red">
                                 <%= @item.is_active ? '販売中' : '販売停止中' %>
                             </div>
                         <% end %>
                     </th>
                 </tr>
-                <tr>
-                    <th>
+                <tr class = "none">
+                    <th class = "none">
                         <div class = "edit">
                             <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success" %>
                         </div>
