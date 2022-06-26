@@ -1,4 +1,5 @@
 class Public::CartItemsController < ApplicationController
+      before_action :authenticate_customer!, except: [:top,:about]
   def index
     @cart_items = current_customer.cart_items
     @sum
