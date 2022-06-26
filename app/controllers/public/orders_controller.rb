@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-
+    before_action :authenticate_customer!, except: [:top,:about]
 
   def new
     @order = current_customer.orders.new

@@ -8,12 +8,13 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           
-          <li>
+      
+        <% if customer_signed_in? %>
+        <li>
             <%=  link_to public_items_path,class: 'nav-link text-light' do %>
               商品一覧
             <% end %>
-          </li>
-        <% if customer_signed_in? %>
+        </li>
           <li>
             <%= link_to public_customer_path(current_customer),class: 'nav-link text-light' do %>
               マイページ
@@ -30,6 +31,11 @@
             <% end %>
           </li>
         <% elsif admin_signed_in? %>
+          <li>
+            <%=  link_to admin_items_path,class: 'nav-link text-light' do %>
+              商品一覧
+            <% end %>
+          </li>
             <li>
             <%=  link_to admin_customers_path,class: 'nav-link text-light' do %>
               会員一覧
@@ -56,6 +62,11 @@
               　about
             <% end %>
           </li>
+           <li>
+            <%=  link_to public_items_path,class: 'nav-link text-light' do %>
+              商品一覧
+            <% end %>
+            </li>
             <li>
             <%= link_to new_customer_registration_path ,class: 'nav-link text-light' do %>
               新規登録

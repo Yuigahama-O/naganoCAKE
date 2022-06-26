@@ -1,5 +1,5 @@
 class Admin::CustomersController < ApplicationController
-  before_action :authenticate_admin!, except: [:top,:about]
+  before_action :authenticate_admin!, except: [:top,:about,]
   
     def index
     @customers = Customer.all.page(params[:page]).per(10)

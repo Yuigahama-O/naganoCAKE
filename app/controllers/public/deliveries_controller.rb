@@ -1,4 +1,5 @@
 class Public::DeliveriesController < ApplicationController
+      before_action :authenticate_customer!, except: [:top,:about]
   def index
     @delivery = current_customer.deliveries.new
     @deliveries = current_customer.deliveries.all
