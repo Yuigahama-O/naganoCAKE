@@ -20,14 +20,12 @@
   box-sizing:border-box;
 }
 
+
 main{
     padding: 40px 40px 10px 40px;
     background-color: #FFFFEE;
 }
 
-header{
-    background-color: #CCFFFF;
-}
 
 .index-card{
     width: 200px;
@@ -70,13 +68,13 @@ header{
 .title-name{
     width: 400px;
     text-align: center;
-    background-color: #CBFFD3;
+    background-color: #EEEEEE;
 }
 
 .item-title-name{
     width: 200px;
     text-align: center;
-    background-color: #CBFFD3;
+    background-color: #EEEEEE;
 }
 
 .customer-show{
@@ -144,7 +142,7 @@ header{
 .order-title{
     width: 200px;
     text-align: center;
-    background-color: #CBFFD3;
+    background-color: #EEEEEE;
     margin: 0px 0px 0px 100px;
     
 }
@@ -152,7 +150,7 @@ header{
 .cart-title{
     width: 300px;
     text-align: center;
-    background-color: #CBFFD3;
+    background-color: #EEEEEE;
     margin: 0px 0px 0px 100px;
 }
 
@@ -292,11 +290,54 @@ th{
     margin: 0px 150px 0px 0px;
 }
 
+.login-title{
+    background-color: #EEEEEE;
+    width: 150px;
+    text-align: center;
+}
+
+.login-text{
+    background-color: #EEEEEE;
+    width: 300px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.login-email{
+    margin: 15px 0px;
+}
+
+.login-pass{
+    margin: 15px 0px;
+}
+
+.actions{
+    text-align: left;
+}
+
+.signup-name{
+    width: 200px;
+}
+
+.signup-text{
+    width: 240px;
+    margin: 10px 0px;
+}
+
+.signup-email{
+    width: 255px;
+    margin: 10px 0px;
+}
+
+.signup-actions{
+    text-align: center;
+}
+
 
 
 footer{
   width: 100%;
-    background-color: #CCFFFF;
+    background-color: #343a40;
     padding: 30px 0;
 }
 

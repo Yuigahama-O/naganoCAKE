@@ -1,31 +1,38 @@
-
-<h2><span  class="bg-secondary text-white">ログイン</span></h2>
-<p><span  class="bg-secondary text-white">会員登録をした方はこちらからログイン</span></p>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :"メールアドレス" %> 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :"パスワード" %> 
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-3"></div>
+    <div class = "col-sm-6">
+      <h2 class = "login-title">ログイン</h2>
+      <p class = "login-text">会員登録をした方はこちらからログイン</p>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="login-email">
+          <%= f.label:"メールアドレス" %> 
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        </div>
+      
+        <div class="login-pass">
+          <%= f.label:"パスワード" %> 
+          <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+        </div>
+      
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+      
+        <div class="actions">
+          <%= f.submit "ログイン",class:'btn btn-sm btn-primary' %>
+        </div>
+      <% end %>
+      
+      
+      <p class = "login-text">会員登録が登録されていない方へ</p>
+      <%= link_to new_customer_registration_path do %>こちら<% end %> <span>から新規登録を行なってください。</span>
+      
+      <%= render "devise/shared/links" %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in",class:'btn btn-sm btn-primary' %>
   </div>
-<% end %>
-
-
-<p><span  class="bg-secondary text-white">会員登録が登録されていない方へ</span></p>
-<%= link_to new_customer_registration_path do %>こちら<% end %> <span>から新規登録を行なってください。</span>
-
-<%= render "devise/shared/links" %>
+</div>
+  
