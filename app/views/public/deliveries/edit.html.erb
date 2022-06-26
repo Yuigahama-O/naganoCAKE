@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-            <h2>配送先編集</h2>
+            <h2 class = "item-title-name">配送先編集</h2>
             <%= form_with model: @delivery, url: public_delivery_path(@delivery.id), method: :patch do |f| %>
                 <div class="form-group">
                     <label for="postal_code">郵便番号（ハイフンなし）</label>
