@@ -66,7 +66,7 @@
       <table class = "none">
         <tr class = "none">
           <th class = "none">商品合計</th>
-          <td class = "none"><%= @order.order_details.sum(:price) %>円</td>
+          <td class = "none"><%= @order.order_details.sum(&:subtotal) %>円</td>
         </tr>
         <tr class = "none">
           <th class = "none">送料</th>
