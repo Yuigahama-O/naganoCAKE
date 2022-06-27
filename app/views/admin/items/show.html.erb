@@ -1,2 +1,54 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+    <div class="row">
+        <div class = "col-sm-3"></div>
+        <div class="col-sm-2">
+            <h2 class="item-title-name">商品詳細</h2>
+            <%= image_tag @item.get_item_image(200, 200) %>
+        </div>
+        <div class = "col-sm-1"></div>
+        <div class = "col-sm-4 item-show-text">
+            <table class = "show">
+            <tbody>
+                <tr class = "none">
+                    <th class = "none">商品名</th>
+                    <th class = "none"><%= @item.name %></th>
+                </tr>
+                <tr class = "none">
+                    <th class = "none">商品説明</th>
+                    <th class = "none"><%= @item.introduction %></th>
+                </tr>
+                <tr class = "none">
+                    <th class = "none">ジャンル</th>
+                    <th class = "none"><%= @item.genre.genre %></th>
+                </tr>
+                <tr class = "none">
+                    <th class = "none">税込価格</br>(税抜価格)</th>
+                    <th class = "none"><%= @item.with_tax_price%>(<%= @item.price %>)円</th>
+                </tr>
+                <tr class = "none">
+                    <th class = "none">販売ステータス</th>
+                    <th class = "none">
+                        <% if @item.is_active == true %>
+                            <div class = "green">
+                                <%= @item.is_active ? '販売中' : '販売停止中' %>
+                            </div>
+                        <% else %>
+                            <div class = "red">
+                                <%= @item.is_active ? '販売中' : '販売停止中' %>
+                            </div>
+                        <% end %>
+                    </th>
+                </tr>
+                <tr class = "none">
+                    <th class = "none">
+                        <div class = "edit">
+                            <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success" %>
+                        </div>
+                    </th>
+                </tr>
+            </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>

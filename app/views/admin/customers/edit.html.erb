@@ -1,2 +1,120 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+    <h2 class = "title-name"><%= @customer.last_name %> <%= @customer.first_name %>さんの会員情報編集</h2>
+      
+      <%= form_with model:@customer,url:admin_customer_path, local:true do |f| %>
+      <div class="row">
+        <div class = "col-3">
+          <div class = "form-group">
+            <%= f.label :"　　会員ID" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class = "form-group">
+            <p>　　　<%= @customer.id %></p>
+          </div>  
+        </div>
+      </div>
+      <div class = "row">
+    　　<div class = "col-3">
+          <div class="form-group">
+            <%= f.label :"氏名" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="form-group">
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="form-group">
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class = "row">
+    　　<div class = "col-3">
+          <div class="form-group">
+            <%= f.label :"フリガナ" %>
+          </div>
+        </div>
+        <div class ="col-3">                 
+          <div class="form-group">
+            <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class:"form-control" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="form-group">
+            <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      
+      <div class = "row">
+    　　<div class = "col-3">
+          <div class="form-group">
+            <%= f.label :"郵便番号" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="form-group">
+            <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      
+      <div class = "row">
+    　　<div class = "col-3">
+          <div class="form-group">
+            <%= f.label :"住所" %>
+          </div>
+        </div>
+        <div class = "col-8">
+          <div class="form-group">
+            <%= f.text_field :address, autofocus: true, autocomplete: "address", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class = "row">
+    　　<div class = "col-3">
+          <div class="form-group">
+            <%= f.label :"電話番号" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="form-group">
+            <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      
+      <div class = "row">
+    　　<div class = "col-3">
+          <div class="form-group">
+            <%= f.label :"メールアドレス" %>
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="form-group">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :"　　会員ステータス" %>
+        <div class = "customer-radio" style = "display:inline">
+          　　　　　<%= f.radio_button :is_deleted, :false %><span>有効</span>
+          <%= f.radio_button :is_deleted, :true %><span>退会</span>
+        </div>
+      </div>
+      <div class="customer-success">
+        <%= f.submit "編集を保存", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+  
+     

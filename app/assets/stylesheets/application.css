@@ -13,3 +13,337 @@
  *= require_tree .
  *= require_self
  */
+
+ *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+main{
+    padding: 40px 40px 10px 40px;
+    background-color: #FFFFEE;
+}
+
+
+.index-card{
+    width: 200px;
+    margin: 10px;
+}
+
+.top-card{
+    display: flex;
+}
+
+.card{
+    width: 200px;
+    heigth: 250px;
+}
+
+.about{
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+.new{
+    display:flex;
+    margin: 0px 15px 5px 0px;
+}
+
+.new-btn{
+    margin: 0px 0px 0px 200px;
+}
+
+.top-link{
+    width: 100%;
+    text-align: right;
+}
+
+.index-title{
+    text-align: center;
+    color: #000000;
+}
+
+.title-name{
+    width: 400px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+.item-title-name{
+    width: 200px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+.customer-show{
+    margin: 10px 0px 5px 0px;
+}
+
+.index-body{
+    padding: 20px 10px 0px 10px;
+}
+
+.price{
+    margin: 30px 0px;
+}
+
+.cart{
+    text-align: left;
+}
+
+.cart-center{
+    text-align: center;
+}
+
+
+.green{
+    color: #00ff00;
+} 
+
+.gray{
+    color: #c0c0c0; 
+}
+
+.red{
+    color: #ff0000;
+}
+
+.title{
+    margin: 20px 0px 0px 0px;
+}
+
+.show{
+    margin: 20px;
+    border: none;
+}
+
+.edit{
+    margin: 40px 20px 20px 20px;
+}
+
+.delivery{
+    margin: 10px 20px 0px 20px;
+}
+
+.customer-show-title{
+    margin: 30px 0px 0px 0px;
+}
+
+.destroy{
+    margin: 0px 0px 0px 50px;
+}
+
+.order-show{
+    margin: 20px 0px 0px 0px;
+}
+
+.order-title{
+    width: 200px;
+    text-align: center;
+    background-color: #EEEEEE;
+    margin: 0px 0px 0px 100px;
+    
+}
+
+.cart-title{
+    width: 300px;
+    text-align: center;
+    background-color: #EEEEEE;
+    margin: 0px 0px 0px 100px;
+}
+
+.cart-index{
+    text-align: right;
+    margin: 5px;
+}
+
+table, th, td {
+    border: 2px solid #dee2e6;
+}
+
+th{
+    background-color: #C2EEFF;
+}
+
+.show-name{
+    background-color: #FFFFEE;
+}
+
+.cart-new{
+    margin: 20px 0px 0px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.confirm-btn{
+    text-align: center;
+    margin: 50px 0px 50px 0px;
+}
+
+.confirm{
+    margin: 20px 0px 0px 0px;
+}
+
+.confrim-text{
+    width: 100%;
+}
+
+.customer-btn{
+    display: flex;
+    
+}
+
+.customer-edit{
+    margin: 0px 100px 0px 250px;
+}
+
+.none{
+    border: none;
+    background-color: #FFFFEE;
+}
+
+.genre{
+    background-color: #C2EEFF;
+}
+
+.genre-edit{
+    margin: 20px 0px;
+}
+
+.customer-show{
+    text-align: center;
+}
+
+.customer-show-edit{
+    margin: 0px 50px 0px 50px;
+}
+
+.order-show{
+    margin: 40px 0px 0px 0px;
+}
+
+.order-table{
+    margin: 30px 0px 0px 0px;
+}
+
+.customer-success{
+    text-align: center;
+}
+
+.black{
+    color: #000000;
+}
+
+.customer-title{
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+}
+
+.customer-text{
+    text-align: center;
+}
+
+.customer-destroy{
+    text-align: center;
+    display: flex;
+    width: 100%;
+    margin: 0px 0px 0px 480px;
+}
+
+.destroy-btn{
+    margin: 0px 0px 0px 30px;
+}
+
+.delivery-index{
+    text-align: center;
+}
+
+.admin-index-new{
+    margin: 0px 0px 0px 1080px;
+    text-align: right;
+    color: #000000;
+}
+
+.item-show-text{
+    margin: 20px 0px;
+}
+
+.is_active{
+    display: flex;
+}
+
+.is_active-radio{
+    margin: 0px 10px 0px 10px;
+}
+
+.item-edit-btn{
+    text-align: center;
+}
+
+.delivery-address{
+    margin: 0px 150px 0px 0px;
+}
+
+.delivery-name{
+    margin: 0px 150px 0px 0px;
+}
+
+.login-title{
+    background-color: #EEEEEE;
+    width: 150px;
+    text-align: center;
+}
+
+.login-text{
+    background-color: #EEEEEE;
+    width: 300px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.login-email{
+    margin: 15px 0px;
+}
+
+.login-pass{
+    margin: 15px 0px;
+}
+
+.actions{
+    text-align: left;
+}
+
+.signup-name{
+    width: 200px;
+}
+
+.signup-text{
+    width: 240px;
+    margin: 10px 0px;
+}
+
+.signup-email{
+    width: 255px;
+    margin: 10px 0px;
+}
+
+.signup-actions{
+    text-align: center;
+}
+
+.admin-login{
+    background-color: #EEEEEE;
+    width: 270px;
+}
+
+
+footer{
+  width: 100%;
+    background-color: #343a40;
+    padding: 30px 0;
+}
+
+
+

@@ -1,0 +1,38 @@
+  <div class="container px-5 px-sm-0">
+    <div class="row">
+      <div class="col-md-1">
+        
+        
+        </div>        
+      <div class="col-md-8 offset-md-1">
+        <div class="col-md-8 offset-md-1">
+          <p>ようこそ、ながのCAKEへ！</br>
+             このサイトはケーキ販売のECサイトになります。</br>
+             会員でない方も商品の閲覧はできますが、</br>購入には会員登録が必要になります。</p>
+          <h2>新着商品</h2> 
+          <div class = "top-card">
+            <% @items.each do |item| %>
+              <div class="index-card">
+                  <%= link_to public_item_path(item.id), {class: "link"} do %>
+                      <div class = "index-body">
+                          <%= image_tag item.get_item_image(100, 100) %>
+                      </div>    
+                      <div class="index-title">
+                          <%= item.name %>
+                      </div>
+                      <div class="index-title">
+                          ￥<%= item.price %>円
+                      </div>
+                  <% end %> 
+              </div>
+            
+             
+        <% end %>
+        </div>
+        </div>
+       </div>
+       <div class = "top-link">
+        <%= link_to "全ての商品を見る", public_items_path() %>
+      </div>
+    </div>
+  </div>

@@ -1,2 +1,51 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+    <h2 class = "title-name"><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</h2>
+    <table class= "table none">
+        <tbody class="none">
+          <tr class="none">
+              <th class = "none">会員ID</th>
+              <th class = "none"><%= @customer.id %></th>
+          </tr>
+          <tr class="none">
+              <th class = "none">氏名</th>
+              <th class = "none"><%= @customer.last_name %> <%= @customer.first_name %></th>
+          </tr>
+          <tr class="none">
+              <th class = "none">フリガナ</th>
+              <th class = "none"><%= @customer.last_name_kana %> <%= @customer.first_name_kana %></th>
+          </tr>
+          <tr class="none">
+             <th class = "none">郵便番号</th>
+             <th class = "none"> <%= @customer.postal_code %></th>
+          </tr>
+          <tr class="none">
+              <th class = "none">住所</th>
+              <th class = "none"><%= @customer.address %></th>
+          </tr>
+         <tr class="none">
+              <th class = "none">電話番号</th>
+              <th class = "none"><%= @customer.phone_number %></th>
+          </tr>
+          <tr class="none">
+              <th class = "none">メールアドレス</th>
+              <th class = "none"><%= @customer.email %></th>
+          </tr>
+          <tr class="none">
+              <th class = "none">ステータス</th>
+                <% if @customer.is_deleted == true %>
+                    <th class = "none red">無効</th>
+                <% else %>
+                    <th class = "none green">有効</th>
+                <% end %>
+          </tr>
+        </tbody>
+    </table>
+      <div class='customer-show'>
+         <span> <%= link_to edit_admin_customer_path(@customer),class: "customer-show-edit btn btn-success edit_public_customer_#{@customer.id}" do %> 編集する<% end %></span>
+         <span> <%= link_to admin_orders_path(),class: "btn btn-primary edit_public_customer_#{@customer.id}" do %>  注文履歴一覧画面に戻る<% end %></span>
+    </div>
+    </div>
+  </div>
+</div>
